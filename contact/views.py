@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 from .models import contact
 # Create your views here.
 def contactus(request):
@@ -10,6 +11,7 @@ def contactus(request):
 
         contactData=contact(name=name,email=email,subject=subject,message=message)
         contactData.save()
+        messages.success(request, 'Message Sent Successfully. We will contact you soon!')
 
         # or you can use this also
         

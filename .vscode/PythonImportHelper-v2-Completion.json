@@ -33,6 +33,17 @@
         }
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {
+            "value": "\n```python\nimport django.contrib\n```\n",
+            "supportThemeIcons": false
+        }
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -687,10 +698,10 @@
         "kind": 2,
         "importPath": "contact.views",
         "description": "contact.views",
-        "peekOfCode": "def contactus(request):\n    if request.method==\"POST\":\n        name=request.POST.get('name')\n        email=request.POST.get('email')\n        subject=request.POST.get('subject')\n        message=request.POST.get('message')\n        contactData=contact(name=name,email=email,subject=subject,message=message)\n        contactData.save()\n        # or you can use this also\n        # contactData=contact()",
+        "peekOfCode": "def contactus(request):\n    if request.method==\"POST\":\n        name=request.POST.get('name')\n        email=request.POST.get('email')\n        subject=request.POST.get('subject')\n        message=request.POST.get('message')\n        contactData=contact(name=name,email=email,subject=subject,message=message)\n        contactData.save()\n        messages.success(request, 'Message Sent Successfully. We will contact you soon!')\n        # or you can use this also",
         "detail": "contact.views",
         "documentation": {
-            "value": "\n```python\nfrom contact.views import contactus\n```\n\n```python\n\n\n```\n\n```python\ndef contactus(request):\n    if request.method==\"POST\":\n        name=request.POST.get('name')\n        email=request.POST.get('email')\n        subject=request.POST.get('subject')\n        message=request.POST.get('message')\n        contactData=contact(name=name,email=email,subject=subject,message=message)\n        contactData.save()\n        # or you can use this also\n        # contactData=contact()\n```\n",
+            "value": "\n```python\nfrom contact.views import contactus\n```\n\n```python\n\n\n```\n\n```python\ndef contactus(request):\n    if request.method==\"POST\":\n        name=request.POST.get('name')\n        email=request.POST.get('email')\n        subject=request.POST.get('subject')\n        message=request.POST.get('message')\n        contactData=contact(name=name,email=email,subject=subject,message=message)\n        contactData.save()\n        messages.success(request, 'Message Sent Successfully. We will contact you soon!')\n        # or you can use this also\n```\n",
             "supportThemeIcons": false
         }
     },
